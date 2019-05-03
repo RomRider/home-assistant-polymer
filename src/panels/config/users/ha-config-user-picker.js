@@ -47,10 +47,10 @@ class HaUserPicker extends EventsMixin(
           left: 24px;
         }
 
-        paper-card {
-          display: block;
+        ha-card {
           max-width: 600px;
           margin: 16px auto;
+          overflow: hidden;
         }
         a {
           text-decoration: none;
@@ -59,7 +59,7 @@ class HaUserPicker extends EventsMixin(
       </style>
 
       <hass-subpage header="[[localize('ui.panel.config.users.picker.title')]]">
-        <paper-card>
+        <ha-card>
           <template is="dom-repeat" items="[[users]]" as="user">
             <a href="[[_computeUrl(user)]]">
               <paper-item>
@@ -76,7 +76,7 @@ class HaUserPicker extends EventsMixin(
               </paper-item>
             </a>
           </template>
-        </paper-card>
+        </ha-card>
 
         <paper-fab
           is-wide$="[[isWide]]"
